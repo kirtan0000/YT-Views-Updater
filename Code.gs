@@ -37,7 +37,7 @@ const updateYouTubeVideo = (e = null) => {
         } = {}
     } = video;
 
-    var afterData = "Right Now, This video currently has " + viewCount + " views, " + commentCount + " comments, and " + likeCount + " likes.\n\n\n\nplz subscribe i have no friends😢";
+          var afterData = "Right Now, This video currently has " + viewCount + " views, " + commentCount + " comments, and " + likeCount + " likes.\nCode: https://github.com/kirtan0000/YT-Views-Updater\n\n\nplz subscribe i have no friends😢";
 
     if (viewCount && commentCount && likeCount) {
 
