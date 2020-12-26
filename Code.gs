@@ -2,6 +2,7 @@
 
 const updateYouTubeVideo = (e = null) => {
   const id = "nUfDiMpJhjU";
+  // Put any id you want!
   const template = "This video has VIEWCOUNT views, COMMENTCOUNT comments, and LIKECOUNT likes";
 
   // The cron job is created only when the script is run manually
