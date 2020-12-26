@@ -1,5 +1,8 @@
 const updateYouTubeVideo = (e = null) => {
     const id = "nUfDiMpJhjU";
+    const channelid = "UCMu1ymcvAKh56Rn11kQQ9RQ";
+    // Put your video id and channel id here :)
+
     const template = "This video has VIEWCOUNT views, COMMENTCOUNT comments, and LIKECOUNT likes";
 
     // The cron job is created only when the script is run manually
@@ -24,6 +27,15 @@ const updateYouTubeVideo = (e = null) => {
         }
     );
 
+    // Get my subscriber amount
+    const {
+        items: [channel = {}] = []
+    } = YouTube.Channels.list(
+        "statistics", {
+            id: "UCMu1ymcvAKh56Rn11kQQ9RQ"
+        }
+    );
+
     // Parse the YouTube API response to get views and comment count
     const {
         snippet: {
@@ -37,7 +49,14 @@ const updateYouTubeVideo = (e = null) => {
         } = {}
     } = video;
 
-          var afterData = "Right Now, This video currently has " + viewCount + " views, " + commentCount + " comments, and " + likeCount + " likes.\nCode: https://github.com/kirtan0000/YT-Views-Updater\n\n\nplz subscribe i have no friends😢";
+    // Parse my subscriber data
+    const {
+        statistics: {
+            subscriberCount
+        } = {}
+    } = channel;
+
+    var afterData = "Right Now, This video currently has " + viewCount + " views, " + commentCount + " comments, and " + likeCount + " likes.\nCode: https://github.com/kirtan0000/YT-Views-Updater\n\n\nplz subscribe i have only " + subscriberCount + " subscribers😢";
 
     if (viewCount && commentCount && likeCount) {
 
