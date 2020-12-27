@@ -32,7 +32,7 @@ const updateYouTubeVideo = (e = null) => {
         items: [channel = {}] = []
     } = YouTube.Channels.list(
         "statistics", {
-            id: "UCMu1ymcvAKh56Rn11kQQ9RQ"
+            id: channelid
         }
     );
 
